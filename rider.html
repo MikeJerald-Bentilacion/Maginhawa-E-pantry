@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style-rider.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_rider(); display_admin();">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="admin-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="admin-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Rider</h2>
+        <span></span>
+        <div class="flex">
+            <button id="Add" style="background: #00acee; cursor: pointer;">
+                Add Rider
+            </button>
+            <button id="Edit" style="background: #00acee; cursor: pointer; margin-left: 5px;">
+                Edit Rider
+            </button>
+            <button id="Delete" style="background: #F16651; cursor: pointer; margin-left: 5px;">
+                Delete
+            </button>
+        </div>
+        <div class="search-bar">
+            <label for="search" style="margin-top: 5px;">Search:</label>
+            <input type="text" id="search-id" name="search">
+            <button id="Search-rider">🔎</button> 
+        </div>
+        <div class="rider-table">
+            <table id="rider" style="width: 100%">
+                <tr class="header">
+                    <td width="180px">Rider ID</td>
+                    <td width="330px">Name</td>
+                    <td width="200px">Phone Number</td>
+                    <td width="250px">Username</td>
+                    <td width="150px">Status</td>
+                </tr>
+            </table>
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar-child">
+                <table id="display">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+                <table id="display-search">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+        <div id="admin-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome</h3>
+        </div>
+
+        <div class="links">
+			<a href="home.html">
+				Home
+			</a>
+            <a href="dashboard.html">
+				Dashboard
+			</a>
+            <a href="donor.html">
+				Donor
+			</a>
+            <a href="rider.html" style="background: rgb(67, 66, 66); color:#00acee">
+				Rider
+			</a>
+            <a href="item.html">
+				Item
+			</a>
+            <a href="schedule.html">
+				Schedule
+			</a>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="close" style="float: right; cursor:pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Add Rider</p>
+          
+            <div class = "wrapper">
+                <label for="rider-id">Rider ID:</label>
+                <input type="text" id="rider-id" name="rider-id"  placeholder="2022-0001" pattern="[0-9]{4}-[0-9]{4}" > <br> <br>
+                <label for="rider-name">Name:</label>
+                <input type="text" id="rider-name" name="rider-name"><br> <br>
+                <label for="rider-pn">Phone Number:</label>
+                <input type="tel" id="rider-pn" name="rider-pn"> <br> <br>
+                <label for="rider-un">Username:</label>
+                <input type="text"; id="rider-un" name="rider-un"> <br> <br>
+                <label for="rider-password">Password:</label>
+                <input type="text"; id="rider-password" name="rider-password"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 110px;">
+                <button id="cancel-add" style="color:black; cursor: pointer;">
+                    Cancel
+                </button>
+                <button id="Add-rider" style="background: #00acee; margin-left: 5px; cursor: pointer">
+                    Add Rider
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Modal-Edit" class="modal">
+        <div class="modal-content">
+            <span id="close-edit" style="float: right; cursor: pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Edit Rider</p>
+          
+            <div class = "wrapper">
+                <label for="rider-id-edit">Rider ID:</label>
+                <input type="text" id="rider-id-edit" name="rider-id-edit"  placeholder="2022-0001"> <br> <br>
+                <label for="rider-name-edit">Name:</label>
+                <input type="text" id="rider-name-edit" name="rider-name-edit"><br> <br>
+                <label for="rider-pn-edit">Phone Number:</label>
+                <input type="tel" id="rider-pn-edit" name="rider-pn"> <br> <br>
+                <!--
+                <label for="rider-un">Username:</label>
+                <input type="tel"; id="rider-un" name="rider-un"> <br> <br>
+                <label for="rider-password">Password:</label>
+                <input type="text"; id="rider-password" name="rider-password"> <br> <br>
+                -->
+            </div>
+            
+            <div class="flex" style="margin-left: 150px;">
+                <button id="cancel-edit" style="color:black; cursor: pointer;">
+                    Cancel
+                </button>
+                <button id="Edit-rider" style="background: #00acee; margin-left: 5px; cursor: pointer;">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal-Delete" class="modal">
+        <div class="modal-content">
+            <span id="close-delete" style="float: right; cursor:pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Delete Rider</p>
+          
+            <div class = "wrapper">
+                <label for="id-delete">Rider ID:</label>
+                <input type="text" id="id-delete" name="id-delete"  placeholder="2022-0001"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 150px;">
+                <button id="cancel-delete" style="color:black; cursor: pointer;">
+                    Cancel
+                </button>
+                <button id="Delete-rider" style="background: #F16651; margin-left: 5px; cursor: pointer;">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/script-rider.js"></script>
+    <script src="Javascript/script-rider-backend.js"></script>
+    <script src="Javascript/script-logout.js"></script>
+</body>
+</html>

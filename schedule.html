@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style-schedule.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_schedule(); display_admin();">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="admin-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="admin-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Schedule</h2>
+        <span></span>
+        <div class="flex">
+            <button id="Add" style="background: #00acee; cursor: pointer;">
+                Add Schedule
+            </button>
+            <button id="Edit" style="background: #00acee; cursor: pointer;margin-left: 5px;">
+                Edit Schedule
+            </button>
+            <button id="Delete" style="background: #F16651; cursor: pointer; margin-left: 5px;">
+                Delete
+            </button>
+        </div>
+        <div class="search-bar">
+            <label for="search" style="margin-top: 5px;">Search:</label>
+            <input type="text" id="search-id" name="search">
+            <button id="Search-schedule">🔎</button> 
+        </div>
+        <div class="donor-table">
+            <table id="donors" style="width: 100%">
+                <tr class="header">
+                    <td width="160px">Schedule ID</td>
+                    <td width="150px">Date</td>
+                    <td width="150px">Time</td>
+                    <td width="160px">Donor ID</td>
+                    <td width="250px">Donor's Information</td>
+                    <td width="160px">Rider ID</td>
+                    <td width="160px">Item ID</td>
+                </tr>
+            </table>
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar-child">
+                <table id="display">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+                <table id="display-search">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+        <div id="admin-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome</h3>
+        </div>
+
+        <div class="links">
+			<a href="home.html">
+				Home
+			</a>
+            <a href="dashboard.html">
+				Dashboard
+			</a>
+            <a href="donor.html">
+				Donor
+			</a>
+            <a href="rider.html">
+				Rider
+			</a>
+            <a href="item.html">
+				Item
+			</a>
+            <a href="schedule.html" style="background: rgb(67, 66, 66); color:#00acee">
+				Schedule
+			</a>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="close" style="float: right; cursor: pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Add Schedule</p>
+          
+            <div class = "wrapper">
+                <label for="s-id">Schedule ID:</label>
+                <input type="text" id="schedule-id" name="s-id"  placeholder="2022-0001"> <br> <br>
+                <label for="name">Date:</label>
+                <input type="date" id="date" name="name"><br> <br>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time"><br> <br>
+                <label for="d-id">Donor ID:</label>
+                <select id="dropdown" name="d-id" style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey; margin-bottom: 0.6em;">
+                </select> <br> <br>
+                <label for="di">Donor's Information:</label>
+                <input type="text"; id="donor-information" name="di"> <br> <br>
+                <label for="r-id">Rider ID:</label>
+                <select id="dropdown-rider" style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey; margin-bottom: 0.6em;">
+                </select> <br> <br>
+                <label for="i-id">Item ID:</label>
+                <select id="dropdown-item"  style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey;">
+                </select>
+            </div>
+            
+            <div class="flex" style="margin-left: 90px;">
+                <button id="cancel-add" style="color:black; cursor: pointer;">
+                    Cancel
+                </button>
+                <button id="Add-schedule" style="background: #00acee; margin-left: 5px; cursor: pointer">
+                    Add Schedule
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Modal-Edit" class="modal">
+        <div class="modal-content">
+            <span id="close-edit" style="float: right; cursor: pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Edit Schedule</p>
+          
+            <div class = "wrapper">
+                <label for="s-id">Schedule ID:</label>
+                <input type="text" id="schedule-id-edit" name="s-id"  placeholder="2022-0001"> <br> <br>
+                <label for="name">Date:</label>
+                <input type="date" id="date-edit" name="name"><br> <br>
+                <label for="time">Time:</label>
+                <input type="time" id="time-edit" name="time"><br> <br>
+                <label for="d-id">Donor ID:</label>
+                <select id="dropdown-edit" name="d-id" style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey; margin-bottom: 0.6em;">
+                </select> <br> <br>
+                <label for="di">Donor's Information:</label>
+                <input type="text"; id="donor-information-edit" name="di"> <br> <br>
+                <label for="r-id">Rider ID:</label>
+                <select id="dropdown-rider-edit" name="r-id" style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey; margin-bottom: 0.6em;">
+                </select> <br> <br>
+                <label for="i-id">Item ID:</label>
+                <select id="dropdown-item-edit" name="i-id" style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey;">
+                </select>
+            </div>
+            
+            <div class="flex" style="margin-left: 90px;">
+                <button id="cancel-edit" style="color:black; cursor: pointer;">
+                    Cancel
+                </button>
+                <button id="Edit-schedule" style="background: #00acee; margin-left: 5px; cursor: pointer;">
+                    Edit Schedule
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal-Delete" class="modal">
+        <div class="modal-content">
+            <span id="close-delete" style="float: right; cursor: pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Delete Schedule</p>
+          
+            <div class = "wrapper">
+                <label for="id-delete">Schedule ID:</label>
+                <input type="text" id="id-delete" name="id-delete"  placeholder="2022-0001"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 150px;">
+                <button id="cancel-delete" style="color:black; cursor: pointer;">
+                    Cancel
+                </button>
+                <button id="Delete-schedule" style="background: #F16651; margin-left: 5px; cursor: pointer;">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/script-schedule.js"></script>
+    <script src="Javascript/script-schedule-backend.js"></script>
+    <script src="Javascript/script-logout.js"></script>
+</body>
+</html>
