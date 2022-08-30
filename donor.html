@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style-donor.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_donor(); display_admin();">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="admin-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="admin-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Donor</h2>
+        <span></span>
+        <div class="flex">
+            <button id="Add" style="background: #00acee; cursor: pointer;">
+                Add Donor
+            </button>
+            <button id="Edit" style="background: #00acee; cursor: pointer; margin-left: 5px;">
+                Edit Donor
+            </button>
+            <button id="Delete" style="background: #F16651; cursor: pointer; margin-left: 5px;">
+                Delete
+            </button>
+        </div>
+        <div class="search-bar">
+            <label for="search" style="margin-top: 5px;">Search:</label>
+            <input type="text" id="search-id" name="search">
+            <button id="Search-donor">🔎</button> 
+        </div>
+        <div class="donor-table">
+            <table id="donors" style="width: 100%">
+                <tr class="header">
+                    <td width="180px">Donor ID</td>
+                    <td width="330px">Name</td>
+                    <td width="250px">Address</td>
+                    <td width="250px">Phone Number</td>
+                    <td width="200px">Username</td>
+                </tr>
+            </table>
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar-child">
+                <table id="display">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+                <table id="display-search">
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+       <div id="admin-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome</h3>
+        </div>
+
+        <div class="links">
+			<a href="home.html">
+				Home
+			</a>
+            <a href="dashboard.html">
+				Dashboard
+			</a>
+            <a href="#" style="background: rgb(67, 66, 66); color:#00acee">
+				Donor
+			</a>
+            <a href="rider.html">
+				Rider
+			</a>
+            <a href="item.html">
+				Item
+			</a>
+            <a href="schedule.html">
+				Schedule
+			</a>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="close" style="float: right; cursor:pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Add Donor</p>
+          
+            <div class = "wrapper">
+                <label for="donor-id">Donor ID:</label>
+                <input type="text" id="donor-id" name="donor-id"  placeholder="2022-0001"> <br> <br>
+                <label for="name">Name:</label>
+                <input type="text" id="donor-name" name="donor-name"><br> <br>
+                <label for="donor-address">Address:</label>
+                <input type="text" id="donor-address" name="donor-address"><br> <br>
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" name="phone-number"  pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" > <br> <br>
+                <label for="donor-username">Username:</label>
+                <input type="tel"; id="donor-username" name="donor-username"> <br> <br>
+                <label for="donor-password">Password:</label>
+                <input type="tel"; id="donor-password" name="donor-password"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 110px;">
+                <button id="cancel-add" style="color:black; cursor:pointer;">
+                    Cancel
+                </button>
+                <button id="Add-donor" style="background: #00acee; margin-left: 5px;">
+                    Add Donor
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Modal-Edit" class="modal">
+        <div class="modal-content">
+            <span id="close-edit" style="float: right; cursor:pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Edit Donor</p>
+          
+            <div class = "wrapper">
+                <label for="id-edit">Donor ID:</label>
+                <select id="dropdown" name="id-edit"  style="font-size: 16px; width: 100%; padding: 0.5em; border-radius: 10px; border: 2px solid grey; margin-bottom: 1em;">
+                </select>
+                <label for="name-edit">Name:</label>
+                <input type="text" id="name-edit" name="name-edit"><br> <br>
+                <label for="address-edit">Address:</label>
+                <input type="text" id="address-edit" name="address-edit"><br> <br>
+                <label for="phone-number-edit">Phone Number:</label>
+                <input type="tel" id="phone-number-edit" name="phone-number-edit"> <br> <br>
+                <label for="username-edit">Username:</label>
+                <input type="tel"; id="username-edit" name="username-edit"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 150px;">
+                <button id="cancel-edit" style="color:black; cursor:pointer;">
+                    Cancel
+                </button>
+                <button id="Edit-donor" style="background: #00acee; margin-left: 5px;">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal-Delete" class="modal">
+        <div class="modal-content">
+            <span id="close-delete" style="float: right; cursor:pointer;">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Delete Donor</p>
+          
+            <div class = "wrapper">
+                <label for="id-delete">Donor ID:</label>
+                <input type="text" id="id-delete" name="id-delete"  placeholder="2022-0001"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 150px;">
+                <button id="cancel-delete" style="color:black; cursor:pointer;">
+                    Cancel
+                </button>
+                <button id="Delete-donor" style="background: #F16651; margin-left: 5px; cursor: pointer;">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/script-donor.js"></script>
+    <script src="Javascript/script-donor-backend.js"></script>
+    <script src="Javascript/script-logout.js"></script>
+</body>
+</html>

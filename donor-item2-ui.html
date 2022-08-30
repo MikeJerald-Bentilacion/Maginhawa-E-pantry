@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/donor/style-donor-item-ui.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_received_by_donor_id(); display_donor_user();">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="donor-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="donor-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Item</h2>
+        <span></span>
+        <div class="flex">
+            <button id="donate" style="background: #00acee; cursor: pointer;">
+                Donate Item
+            </button>
+        </div>
+        <br> <br>
+        <div class="flex-item">
+            <a href="donor-item-ui.html" style="color:#00acee; cursor: pointer;">
+                New Item
+            </a>
+            <a href="#" style="cursor: pointer; margin-left: 5px;">
+                Donation Received
+            </a>
+            <a href="donor-item3-ui.html" style="color:#00acee; cursor: pointer; margin-left: 5px;">
+                Donation Not Received
+            </a>
+        </div>
+        <div class="donor-table">
+            <table id="donors" style="width: 100%">
+                <tr class="header">
+                    <td width="180px">Item ID</td>
+                    <td width="220px">Donor ID</td>
+                    <td width="350px">Type of Donation</td>
+                    <td width="220px">Total Item</td>
+                </tr>
+            </table>
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar-child">
+                <table id="display">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+                <table id="display-search">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+        <div id="donor-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome,</h3>
+        </div>
+
+        <div class="links">
+			<a href="donor-item-ui.html">
+				Item
+			</a>
+            <a href="donor-schedule-ui.html">
+				Schedule
+			</a>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Donate Item</p>
+          
+            <div class = "wrapper">
+                <label for="item-id">Item ID:</label>
+                <input type="text" id="item-id" name="ite-id"  placeholder="2022-0001" pattern="[0-9]{4}-[0-9]{4}" > <br> <br>
+                <label for="donation-type">Donation Type:</label>
+                <input type="text" id="donation-type" name="donation-type"><br> <br>
+                <label for="total-item">Amount:</label>
+                <input type="tel" id="total-item" name="total-item"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 90px;">
+                <button id="cancel" style="color:black">
+                    Cancel
+                </button>
+                <button id="donate" style="background: #00acee; margin-left: 5px;">
+                    Donate
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Modal-Edit" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="font-size: 20px; padding-left: 10px;">Donate Item</p>
+          
+            <div class = "wrapper">
+                <label for="item-id">Item ID:</label>
+                <input type="text" id="item-id" name="ite-id"  placeholder="2022-0001" pattern="[0-9]{4}-[0-9]{4}" > <br> <br>
+                <label for="donation-type">Donation Type:</label>
+                <input type="text" id="donation-type" name="donation-type"><br> <br>
+                <label for="total-item">Amount:</label>
+                <input type="tel" id="total-item" name="total-item"> <br> <br>
+            </div>
+            
+            <div class="flex" style="margin-left: 90px;">
+                <button id="cancel" style="color:black">
+                    Cancel
+                </button>
+                <button id="donate" style="background: #00acee; margin-left: 5px;">
+                    Donate
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/donor/script-donor-item-ui.js"></script>
+    <script src="Javascript/donor/script-donor-item2-ui-backend.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style-item1.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_not_received(); display_admin();">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="admin-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="admin-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Item</h2>
+        <span></span>
+        <div class="flex-item">
+            <a href="item.html" style="color:#00acee; cursor: pointer;">
+                Donation Added by Donor
+            </a>
+            <a href="donation-received.html" style="color:#00acee; cursor: pointer; margin-left: 5px;">
+                Donation Received by Rider
+            </a>
+            <a style="cursor: pointer; margin-left: 5px;">
+                Donation Not Received by Rider
+            </a>
+        </div>
+        <div class="item-table">
+            <table id="item" style="width: 100%">
+                <tr class="header">
+                    <td width="180px">Item ID</td>
+                    <td width="250px">Donor ID</td>
+                    <td width="330px">Type of Donation</td>
+                    <td width="200px">Total Item</td>
+                </tr>
+            </table>
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar-child">
+                <table id="display">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+                <table id="display-search">
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+        <div id="admin-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome,</h3>
+        </div>
+        
+        <div class="links">
+			<a href="home.html">
+				Home
+			</a>
+            <a href="dashboard.html">
+				Dashboard
+			</a>
+            <a href="donor.html">
+				Donor
+			</a>
+            <a href="rider.html">
+				Rider
+			</a>
+            <a href="#" style="background: rgb(67, 66, 66); color:#00acee">
+				Item
+			</a>
+            <a href="schedule.html">
+				Schedule
+			</a>
+        </div>
+    </div>
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/script-item3-backend.js"></script>
+    <script src="Javascript/script-logout.js"></script>
+</body>
+</html>

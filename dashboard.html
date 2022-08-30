@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style-dashboard.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_total(); display_admin()">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="admin-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="admin-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Dashboard</h2>
+        <span></span>
+    </div>
+    <div class="card">
+        <div class="columns" style="margin: 0px;">
+            <div class="box" style="height:100px;">
+                <div class="box2" style="height:100px; margin: 0px;">
+                    <span></span>
+                </div>
+                <p id="item" style="font-size: 1em; margin-left: 20px;">TOTAL ITEMS</p>
+            </div>
+            <div class="box"  style="height:100px;">
+                <div class="box2" style="height:100px; margin: 0px;">
+                    <span></span>
+                </div>
+                <p id="donor" style="font-size: 1em; margin-left: 1.2em;">TOTAL DONOR</p>
+            </div>
+            <div class="box"  style="height:100px;">
+                <div class="box2" style="height:100px; margin: 0px;">
+                    <span></span>
+                </div>
+                <p id="schedule" style="font-size: 1em; margin-left: 1.2em;">TOTAL SCHEDULE</p>
+            </div>
+            <div class="box"  style="height:100px;">
+                <div class="box2" style="height:100px; margin: 0px;">
+                    <span></span>
+                </div>
+                <p id="rider" style="font-size: 1em; margin-left: 1.2em;">TOTAL RIDER</p>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+        <div id="admin-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome</h3>
+        </div>
+
+        <div class="links">
+			<a href="home.html">
+				Home
+			</a>
+            <a href="dashboard.html" style="background: rgb(67, 66, 66); color:#00acee">
+				Dashboard
+			</a>
+            <a href="donor.html">
+				Donor
+			</a>
+            <a href="rider.html">
+				Rider
+			</a>
+            <a href="item.html">
+				Item
+			</a>
+            <a href="schedule.html">
+				Schedule
+			</a>
+        </div>
+    </div>
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/script-dashboard-backend.js"></script>
+    <script src="Javascript/script-logout.js"></script>
+    <script src="Javascript/script-logout-backend.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/donor/style-donor-schedule-ui.css">
+    <title>E-Maginhawa</title>
+</head>
+<body onload="display_schedule_by_donor_id(); display_donor_user();">
+    <div class="topnav">
+        <span id="close-logout">&times;</span>
+        <button class="donor-name3" id="logout" style="float:right; font-size: large; cursor: pointer; background-color: transparent; height: 50px; border: 0px solid;"></button>
+        <div id="modal-logout" class="logout">
+            <div class="modal-content" style="float: right;">
+                <div id="donor-name"></div>
+                    <!--
+                    <button id="cancel" style="color:black; cursor: pointer;">
+                        Change Account
+                    </button>
+                    -->
+                    <button id="logout-user" style="color:black; margin-top: 0.5em; margin-left: 75%; cursor: pointer; font-size: 15px; border: none; border-radius: 5px; padding: 10px; height: 100%;">
+                        Log out
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Schedule</h2>
+        <span></span>
+        <div class="donor-table">
+            <table id="donors" style="width: 100%">
+                <tr class="header">
+                    <td width="160px">Schedule ID</td>
+                    <td width="150px">Date</td>
+                    <td width="150px">Time</td>
+                    <td width="160px">Donor ID</td>
+                    <td width="250px">Donor's Information</td>
+                    <td width="160px">Rider ID</td>
+                    <td width="160px">Item ID</td>
+                </tr>
+            </table>
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar-child">
+                <table id="display">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar active">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class = "center-logo">
+			<h3>E-Maginhawa</h3>
+		</div>
+        
+        <div id="donor-name2" class = "welcome" style="margin-top: 3em;">
+            <h3>Welcome,</h3>
+        </div>
+
+        <div class="links">
+			<a href="donor-item-ui.html">
+				Item
+			</a>
+            <a href="donor-schedule-ui.html">
+				Schedule
+			</a>
+        </div>
+    </div>
+
+    <script src="Javascript/jQuery-2.1.4.min.js"></script>
+    <script src="Javascript/script.js"></script>
+    <script src="Javascript/donor/script-donor-schedule-ui.js"></script>
+    <script src="Javascript/donor/script-donor-schedule-ui-backend.js"></script>
+</body>
+</html>
