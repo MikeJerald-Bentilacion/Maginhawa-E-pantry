@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background: #F9F9F9;
+}
+  
+  /* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: #FEFEFE;
+}
+
+.header h1 {
+    font-size: 50px;
+  }
+  
+  /* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #FEFEFE;
+}
+  
+.topnav span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    margin-top: 50px;
+    background: #F1F1F1;
+}
+
+  /* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #333;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.toggle-btn {
+    padding-top: 8px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0px;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333333;
+    transition: all 300ms ease-in-out;
+}
+
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.sidebar .toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #000; 
+    transform: translateY(-50%);
+    transition: all 300ms ease-in-out;
+}
+
+.sidebar .toggle-btn span:nth-child(1) {
+    top: 10%;
+}
+
+.sidebar .toggle-btn span:nth-child(2) {
+    top: 50%;
+}
+
+.sidebar .toggle-btn span:nth-child(3) {
+    top: 90%;
+}
+
+.sidebar.active {
+    left: 0px;
+}
+/*
+.sidebar.active .toggle-btn span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.sidebar.active .toggle-btn span:nth-child(2) {
+    display: none;
+}
+
+.sidebar.active .toggle-btn span:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+*/
+.links {
+    margin-top: 10px;
+}
+
+.sidebar a {
+    list-style: none;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    padding: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.sidebar .links a.active,
+.sidebar .links a:hover {
+    background: #222;
+    color: #00acee;
+}
+
+.welcome {
+    margin: 15%;
+    color: #fff;
+}
+
+/*Logo*/
+.center-logo {
+    margin-left: 25%;
+    color: #fff;
+}
+
+.card {
+    background-color: #F9F9F9;
+    padding: 20px;
+    margin-left: 16.3%;
+}
+
+.card span {
+    position: absolute;
+    width: 81.3%;
+    height: 3px;
+    margin-top: 10px;
+    background: #CACACA;
+}
+
+.flex {
+    display: flex;
+    padding-top: 30px;
+}
+
+.flex button {
+    color: white; 
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    border: none;
+}
+
+.search-bar {
+    float: right;
+    display: flex;
+    margin-top: 15px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 2px solid #DEDEDE;
+}
+
+.donor-table {
+    margin-top: 60px;
+    border: 2px solid #DEDEDE;
+}
+
+table tr:nth-child(even){background-color: #F1F5F6;}
+
+table, th, td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    border: 1px solid #DEDEDE;
+    border-collapse: collapse;
+}
+
+.header {
+    background-color: #F9F9F9;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 15px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 20%;
+}
+  
+  /* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-edit {
+    color: #aaaaaa;
+    float: right;
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close-edit:hover,
+.close-edit:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 400px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.wrapper label {
+    display: block;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    color: black;
+}
+  
+.wrapper input{
+    font-size: 16px;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 2px solid grey;
+
+}
+
+.logout {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
