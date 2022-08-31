@@ -323,4 +323,3 @@ if __name__ == '__main__':
     app.debug = True
     port = 8000
     app.run(host='0.0.0.0', port = port)
-# cd "D:\Ryan\College\Third Year\First Semester\CSC181\Group 5\Python"
